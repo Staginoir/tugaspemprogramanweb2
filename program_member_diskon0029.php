@@ -11,21 +11,23 @@
     echo "<br/>";
 $totalAkhir = hitungDiskon($totalBelanja, $Member);
 echo "Total belanja setelah diskon : Rp " . number_format($totalAkhir, 0, ',', '.');
+
 function hitungDiskon($totalBelanja, $Member) {
+    $diskon = 0;
     if ($Member) {
         // Diskon untuk member
         if ($totalBelanja > 1000000) {
             $diskon = 0.15; // 15%
-        } elseif ($totalBelanja > 500000) {
+        } elseif ($totalBelanja >= 500000) {
             $diskon = 0.10; // 10%
         } else {
             $diskon = 0.10; // Potongan member 10%
         }
     } else {
         // Diskon untuk bukan member
-        if ($totalBelanja > 1000000) {
+        if ($totalBelanja >= 1000000) {
             $diskon = 0.10; // 10%
-        } elseif ($totalBelanja > 500000) {
+        } elseif ($totalBelanja >= 500000) {
             $diskon = 0.05; // 5%
         }
     }
