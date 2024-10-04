@@ -99,14 +99,14 @@
             // Diskon tambahan belanja lebih dari ketentuan total belanja untuk member
             if ($totalBelanja > 1000000) {
                 $diskon += 0.15; // +15%
-            } elseif ($totalBelanja >= 500000) {
+            } elseif ($totalBelanja == 500000) {
                 $diskon += 0.10; // +10%
             } 
         } else {
             // Diskon untuk bukan member
-            if ($totalBelanja >= 1000000) {
+            if ($totalBelanja == 1000000) {
                 $diskon = 0.10; // 10%
-            } elseif ($totalBelanja >= 500000) {
+            } elseif ($totalBelanja == 500000) {
                 $diskon = 0.05; // 5%
             }
         }
